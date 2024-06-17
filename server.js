@@ -8,9 +8,10 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 
-// Endpoint to fetch quiz questions
-app.get('/api/questions', (req, res) => {
-  const filePath = path.join(__dirname, 'data', 'questions.json');
+// Endpoint to fetch quiz questions from a specified JSON file
+app.get('/api/questions/:filename', (req, res) => {
+  const filename = req.params.filename;
+  const filePath = path.join(__dirname, 'data', `${filename}.json`);
 
   fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
