@@ -5,7 +5,6 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-
 app.use(cors());
 
 // Endpoint to fetch quiz questions from a specified JSON file
@@ -18,10 +17,30 @@ app.get('/api/questions/:filename', (req, res) => {
       console.error(err);
       return res.status(500).json({ error: 'Failed to read file' });
     }
-    
+
     try {
       const jsonData = JSON.parse(data);
-      res.json(jsonData);
+
+      // Randomly select 12 questions
+      const randomQuestions = [];
+      const allQuestions = jsonData;
+      const numQuestions = allQuestions.length;
+
+      if (numQuestions >= 12) {
+        const selectedIndices = new Set();
+        while (selectedIndices.size < 12) {
+          const randomIndex = Math.floor(Math.random() * numQuestions);
+          selectedIndices.add(randomIndex);
+        }
+
+        for (const index of selectedIndices) {
+          randomQuestions.push(allQuestions[index]);
+        }
+      } else {
+        randomQuestions.push(...allQuestions);
+      }
+
+      res.json(randomQuestions);
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Failed to parse JSON data' });
