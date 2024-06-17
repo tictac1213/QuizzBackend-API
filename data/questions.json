@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "Question": "Which type of database management system is MySQL?",
+        "Options": [
+            "a) Object-oriented",
+            "b) Hierarchical",
+            "c) Relational",
+            "d) Network"
+        ],
+        "Answer": "Answer: c\nExplanation: MySQL is a ‘relational’ DBMS. It is efficient at relating data in two different tables and joining information from them. Hierarchical and Network DBMS are based on parent-child relationships of records. Object-oriented DBMS use objects to represent models."
+    },
+    {
+        "id": 2,
+        "Question": "What is data in a MySQL database organized into?",
+        "Options": [
+            "a) Objects",
+            "b) Tables",
+            "c) Networks",
+            "d) File systems"
+        ],
+        "Answer": "Answer: b\nExplanation: Since MySQL is an RDBMS, it’s data is organised in tables for establishing relationships. A table is a collection of rows and columns, where each row is a record and columns describe the feature of records."
+    }
+]
