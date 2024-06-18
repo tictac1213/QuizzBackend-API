@@ -26,9 +26,9 @@ app.get('/api/questions/:filename', (req, res) => {
       const allQuestions = jsonData;
       const numQuestions = allQuestions.length;
 
-      if (numQuestions >= 12) {
+      if (numQuestions >= 15) {
         const selectedIndices = new Set();
-        while (selectedIndices.size < 12) {
+        while (selectedIndices.size < 15) {
           const randomIndex = Math.floor(Math.random() * numQuestions);
           selectedIndices.add(randomIndex);
         }

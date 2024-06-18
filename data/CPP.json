@@ -924,17 +924,6 @@
         "Answer": "Answer: c\nExplanation: Both in C and C++ the type char has same size which is 1. But a character enclosed inside single quotes has difference sizes i.e. in case of char a; the size of a will be 1 in both C and C++ but in case of ‘a’ size will be 4 in case of C but 1 in case of C++."
     },
     {
-        "id": 85,
-        "Question": "What if we define the below structure in C and C++?",
-        "Options": [
-            "a) Error in C but not in C++",
-            "b) Error in C++ but not in C",
-            "c) No error in both C and C++",
-            "d) Error in both C and C++"
-        ],
-        "Answer": "Answer: a\nExplanation: C program requires struct keyword while defining a variable of any structure, therefore, we cannot use the second STRUCT S; definition to declare a variable."
-    },
-    {
         "id": 86,
         "Question": "Which of the following is the scope resolution operator?",
         "Options": [
